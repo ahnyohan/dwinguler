@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">    <title>dwinguler</title>
+
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/common.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="wrapper">
+        <header id="header">
+            <div id="menu-btn">
+                <a href="./full_menu.html">
+                    <img src="./img/btn/main_menu.png" />
+                </a>
+            </div>
+            <div id="logo">
+                <a href="javascript:location.href='./index.html'">
+                    <img src="./img/logo.jpg" />
+                </a>
+            </div>
+            <div id="share-btn">
+                <a href="#" onclick="window.plugins.socialsharing.share('dwinguler 앱을 추천합니다.', null, null, 'goo.gl/vHrce9'); return false;">
+                    <img src="./img/btn/main_sharing.png" />
+                </a>
+            </div>
+        </header>
+        <div id="content-wrapper" class="L-T L-B">
+            <div class="img-cover">
+                <img src="./img/sample/603825_80844501vkaq139989570954.jpg" />
+            </div>
+        </div>
+        <footer id="nav-menu">
+            <ul class="list-inline">
+                <li>
+                    <a href="./products_cover.html">
+                        <img src="./img/icon/product_icon.png" />
+                        <img src="./img/icon/product_icon_1.png" class="menu-activated-icon" />
+                    </a>
+                </li>
+                <li>
+                    <a href="./video_cover.html">
+                        <img src="./img/icon/video_icon.png" />
+                        <img src="./img/icon/video_icon_1.png" class="menu-activated-icon" />
+                    </a>
+                </li>
+                <li>
+                    <a href="./eco_cover.html">
+                        <img src="./img/icon/eco_icon.png" />
+                        <img src="./img/icon/eco_icon_1.png" class="menu-activated-icon" />
+                    </a>
+                </li>
+                <li>
+                    <a href="./notice_list.html">
+                        <img src="./img/icon/notice_icon.png" />
+                        <img src="./img/icon/notice_icon_1.png" class="menu-activated-icon" />
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/fastclick.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+        });
+    </script>
+  </body>
+</html>

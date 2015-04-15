@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">    <title>dwinguler</title>
+
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/common.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="wrapper">
+        <header id="header">
+            <div id="menu-btn">
+                <a href="./full_menu.html">
+                    <img src="./img/btn/main_menu.png" />
+                </a>
+            </div>
+            <div id="back-btn">
+                <a href="#" onclick="javascript:history.back(); return false;">
+                    <img src="./img/btn/back_btn.png" />
+                </a>
+            </div>
+            <div id="logo">
+                <a href="javascript:location.href='./index.html'">
+                    <img src="./img/logo.jpg" />
+                </a>
+            </div>
+            <div id="share-btn">
+                <a href="#" onclick="window.plugins.socialsharing.share('dwinguler 앱을 추천합니다.', null, null, 'goo.gl/vHrce9'); return false;">
+                    <img src="./img/btn/main_sharing.png" />
+                </a>
+            </div>
+        </header>
+       <div id="content-wrapper" class="L-T-M BG2">
+            <ul class="list-unstyled contact-list" id="list">
+            </ul>
+            <div id="info">
+            
+            </div>
+        </div>
+    </div>
+    
+    <div class="loading" id="loading">
+		<img src="./img/loading/spinner.gif" />
+	</div>
+	<div class="loadingBack" id="loadingBack">
+	</div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/fastclick.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+        });
+        
+		var param = 'no='+getParameter('no');
+        $.ajax({
+    		type:"post",
+    		url:server+"api/worldDetail.php",
+    		data:param,
+    		dataType:"json",
+    		success:function(result){
+				
+    			for(var i=0; i<result.length; i++){
+    				var v='<li>';
+                    	v+='<div class="pic" style="background-image: url('+server+result[i].main_image_url+');">';
+                        v+='&nbsp;';
+                    	v+='</div>';
+                    	v+='<div class="info">';
+                        v+='<h2>'+result[i].company_name+'</h2>';
+                        v+='<ul class="list-inline">';
+                        v+='<li>';
+                        v+='<a href="javascript:window.open(\'tel:'+result[i].company_tel+'\', \'_system\');">';
+                        v+='<img src="./img/btn/phone_number_phone.png" />';
+                        v+='</a>';
+                        v+='</li>';
+                        v+='</ul>';
+                    	v+='</div>';
+                		v+='</li>';
+                	
+                	$("#list").append(v);
+                	$("#info").append("<pre>"+result[i].company_info+"</pre>");
+    			}
+    			
+    			//로딩바 감추기
+    			loadingHide();
+    		},
+    		error:function(request, status, error){
+    			loadingHide();
+    			if(request.status==0){
+    				if(confirm('Internet is not connected.\nDo you want to check\nyour connection and try again?')){
+    					location.reload();
+    				}else{
+    					navigator.app.exitApp();
+    				}
+    			}
+    		}
+    	});
+        
+        function doSubmit(menuId){
+        	loadingShow();
+        	var getParam = getParameter('menuId');
+        	window.location.href='./products_list.html?menuId='+getParam + '&menu='+menuId;
+        }
+    </script>
+  </body>
+</html>

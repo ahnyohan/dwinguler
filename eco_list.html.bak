@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">    <title>dwinguler</title>
+
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/common.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="wrapper">
+        <header id="header">
+            <div id="menu-btn">
+                <a href="./full_menu.html">
+                    <img src="./img/btn/main_menu.png" />
+                </a>
+            </div>
+            <div id="back-btn">
+                <a href="#" onclick="javascript:history.back(); return false;">
+                    <img src="./img/btn/back_btn.png" />
+                </a>
+            </div>
+            <div id="logo">
+                <a href="javascript:location.href='./index.html'">
+                    <img src="./img/logo.jpg" />
+                </a>
+            </div>
+            <div id="share-btn">
+                <a href="#" onclick="window.plugins.socialsharing.share('dwinguler 앱을 추천합니다.', null, null, 'goo.gl/vHrce9'); return false;">
+                    <img src="./img/btn/main_sharing.png" />
+                </a>
+            </div>
+        </header>
+        <div id="content-wrapper" class="L-T L-B BG2">
+            <ul class="list-unstyled eco-list" id="list">
+            </ul>
+        </div>
+        <footer id="nav-menu">
+            <ul class="list-inline">
+                <li>
+                    <a href="javascript:goMenu('10000', './products_cover.html');">
+                        <img src="./img/icon/product_icon.png" />
+                        <img src="./img/icon/product_icon_1.png" class="menu-activated-icon" />
+                        <span class="default">Products</span>
+						<span class="act">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:goMenu('20000', './video_cover.html');">
+                        <img src="./img/icon/video_icon.png" />
+                        <img src="./img/icon/video_icon_1.png" class="menu-activated-icon" />
+                        <span class="default">Video</span>
+						<span class="act">Video</span>
+                    </a>
+                </li>
+                <li class="activated">
+                    <a href="javascript:goMenu('30000', './eco_cover.html');">
+                        <img src="./img/icon/eco_icon.png" />
+                        <img src="./img/icon/eco_icon_1.png" class="menu-activated-icon" />
+                        <span class="default">Test Report</span>
+						<span class="actSel">Test Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:goMenu('40000' ,'./notice_list.html');">
+                        <img src="./img/icon/notice_icon.png" />
+                        <img src="./img/icon/notice_icon_1.png" class="menu-activated-icon" />
+                        <span class="default">Notice</span>
+						<span class="act">Notice</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+    
+    <div class="loading" id="loading">
+		<img src="./img/loading/spinner.gif" />
+	</div>
+	<div class="loadingBack" id="loadingBack">
+	</div>
+	<input type="hidden" id="menuId" />
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/fastclick.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+        });
+        
+        function doSubmit(menu){
+        	loadingShow();
+        	if(menu == '100'){
+        		$('#tab1').attr('class','activated');
+        		$('#tab2').attr('class','');
+        		$('#tab3').attr('class','');
+        		$('#tab4').attr('class','');
+        	}else if(menu == '200'){
+        		$('#tab1').attr('class','');
+        		$('#tab2').attr('class','activated');
+        		$('#tab3').attr('class','');
+        		$('#tab4').attr('class','');
+        	}else if(menu == '300'){
+        		$('#tab1').attr('class','');
+        		$('#tab2').attr('class','');
+        		$('#tab3').attr('class','activated');
+        		$('#tab4').attr('class','');
+        	}else if(menu == '400'){
+        		$('#tab1').attr('class','');
+        		$('#tab2').attr('class','');
+        		$('#tab3').attr('class','');
+        		$('#tab4').attr('class','activated');
+        	}
+        	
+        	var menuId = Number($("#menuId").val()) + Number(menu);
+        	var param = 'cate='+ menuId;
+        	 $.ajax({
+         		type:"post",
+         		url:server+"api/list.php",
+         		data:param,
+         		dataType:"json",
+         		success:function(result){
+         			$("#list").html('');
+         			for(var i=0; i<result.length; i++){
+         				var v = '<li onclick="window.location.href=\'./eco_detail.html?no='+result[i].no+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
+                             v+= '<div class="date">';
+                             v+= result[i].reg_date ;
+                         	v+= '</div>';
+                         	v+= '<div class="info">';
+                             v+= '<h2>'+result[i].product_name+'</h2>';
+                             v+= '<div class="img-product" style="background-image: url(\''+server+result[i].thumbnail_url+'\');">';
+                             v+= '&nbsp;';
+                             v+= '</div>';
+                             v+= '<p>'+result[i].product_desc+'</p>';
+                         	v+= '</div>';
+                     		v+= '</li>';
+                     	
+                     	$("#list").append(v);
+         			}
+
+					if(result.length == 0){
+						$("#list").html('The data will be updated soon');
+					}
+         			//로딩바 감추기
+         			loadingHide();
+         		},
+         		error:function(request, status, error){
+         			loadingHide();
+        			if(request.status==0){
+        				if(confirm('Internet is not connected.\nDo you want to check\nyour connection and try again?')){
+        					location.reload();
+        				}else{
+        					navigator.app.exitApp();
+        				}
+        			}
+         		}
+         	});
+        }
+        
+      	//초기화면 진입시..
+        //로딩바 보여주기
+    	loadingShow();
+        $('#tab1').attr('class','activated');
+        $("#menuId").val(getParameter('menuId'));
+        
+		var menu = typeof(getParameter('menu')) == 'undefined' ? 100: getParameter('menu');
+        
+        if(menu == '100'){
+    		$('#tab1').attr('class','activated');
+    		$('#tab2').attr('class','');
+    		$('#tab3').attr('class','');
+    		$('#tab4').attr('class','');
+    	}else if(menu == '200'){
+    		$('#tab1').attr('class','');
+    		$('#tab2').attr('class','activated');
+    		$('#tab3').attr('class','');
+    		$('#tab4').attr('class','');
+    	}else if(menu == '300'){
+    		$('#tab1').attr('class','');
+    		$('#tab2').attr('class','');
+    		$('#tab3').attr('class','activated');
+    		$('#tab4').attr('class','');
+    	}else if(menu == '400'){
+    		$('#tab1').attr('class','');
+    		$('#tab2').attr('class','');
+    		$('#tab3').attr('class','');
+    		$('#tab4').attr('class','activated');
+    	}
+        
+        var menuId = Number($("#menuId").val());
+        var param = 'cate='+menuId;
+        
+        $.ajax({
+    		type:"post",
+    		url:server+"api/list.php",
+    		data:param,
+    		dataType:"json",
+    		success:function(result){
+    			$("#list").html('');
+    			for(var i=0; i<result.length; i++){
+    				var v = '<li onclick="window.location.href=\'./eco_detail.html?no='+result[i].no+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
+                        v+= '<div class="date">';
+                        v+= result[i].reg_date ;
+                    	v+= '</div>';
+                    	v+= '<div class="info">';
+                        v+= '<h2>'+result[i].product_name+'</h2>';
+                        v+= '<div class="img-product" style="background-image: url(\''+server+result[i].thumbnail_url+'\');">';
+                        v+= '&nbsp;';
+                        v+= '</div>';
+                        v+= '<p>'+result[i].product_desc+'</p>';
+                    	v+= '</div>';
+                		v+= '</li>';
+                	
+                	$("#list").append(v);
+    			}
+				if(result.length == 0){
+						$("#list").html('<div class="nolist"> The data will be updated soon. </div>');
+					}
+    			//로딩바 감추기
+    			loadingHide();
+    		},
+    		error:function(request, status, error){
+    			loadingHide();
+    			if(request.status==0){
+    				if(confirm('Internet is not connected.\nDo you want to check\nyour connection and try again?')){
+    					location.reload();
+    				}else{
+    					navigator.app.exitApp();
+    				}
+    			}
+    		}
+    	});
+        
+        function goMenu(menuId, url){
+        	loadingShow();
+        	window.location.href=url+'?menuId='+menuId;
+        }
+    </script>
+  </body>
+</html>

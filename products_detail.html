@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">    <title>dwinguler</title>
+
+    <!-- Bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="./css/common.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="wrapper">
+        <header id="header">
+            <div id="menu-btn">
+                <a href="./full_menu.html">
+                    <img src="./img/btn/main_menu.png" />
+                </a>
+            </div>
+            <div id="back-btn">
+                <a href="#" onclick="javascript:history.back(); return false;">
+                    <img src="./img/btn/back_btn.png" />
+                </a>
+            </div>
+            <div id="logo">
+                <a href="javascript:location.href='./index.html'">
+                    <img src="./img/logo.jpg" />
+                </a>
+            </div>
+            <div id="share-btn">
+                <a href="#" onclick="window.plugins.socialsharing.share('dwinguler 앱을 추천합니다.', null, null, 'goo.gl/vHrce9'); return false;">
+                    <img src="./img/btn/main_sharing.png" />
+                </a>
+            </div>
+        </header>
+        <div id="content-wrapper" class="L-T L-B-D">
+        </div>
+        <footer id="detail-box">
+            
+        </footer>
+    </div>
+    
+    <div class="loading" id="loading">
+		<img src="./img/loading/spinner.gif" />
+	</div>
+	<div class="loadingBack" id="loadingBack">
+	</div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/fastclick.js"></script>
+    <script>
+        $(function() {
+            FastClick.attach(document.body);
+        });
+        
+	var menu = typeof(getParameter('menu')) == 'undefined' ? 10: getParameter('menu');
+		loadingShow();	
+        if(menu == '10'){
+    		$('#tab1').attr('class','activated');
+    		$('#tab2').attr('class','');
+    		$('#tab3').attr('class','');
+    		$('#tab4').attr('class','');
+    	}else if(menu == '20'){
+    		$('#tab1').attr('class','');
+    		$('#tab2').attr('class','activated');
+    		$('#tab3').attr('class','');
+    		$('#tab4').attr('class','');
+    	}else if(menu == '30'){
+    		$('#tab1').attr('class','');
+    		$('#tab2').attr('class','');
+    		$('#tab3').attr('class','activated');
+    		$('#tab4').attr('class','');
+    	}else if(menu == '40'){
+    		$('#tab1').attr('class','');
+    		$('#tab2').attr('class','');
+    		$('#tab3').attr('class','');
+    		$('#tab4').attr('class','activated');
+    	}
+        
+		var param = 'no='+getParameter('no');
+        $.ajax({
+    		type:"post",
+    		url:server+"api/detail.php",
+    		data:param,
+    		dataType:"json",
+    		success:function(result){
+				var v = '<div class="img-cover">';
+                	v+= '<img src="'+server+result.main_image_url+'" />';
+                	v+= '<div class="subContent">'+result.subContent+'</div>';
+            		v+= '</div>';
+				$("#content-wrapper").html(v);
+				
+				var v2= '<div class="detail-info">';
+		            v2+=    '<h2>';
+		            v2+=    	result.product_name;
+		            v2+='	</h2>';
+		            v2+='<p>'+result.product_desc+'</p>';
+		            v2+='</div>';
+		            v2+='<div class="detail-toolbox">';
+		            v2+='	<ul class="list-inline">';
+		            v2+='		<li>';
+		            v2+='			<a href="#"  onclick="imgDownload(\''+server+result.main_image_url+'\'); return false;">';
+		            v2+='				<img src="./img/btn/download_image.png" />';
+		            v2+='			</a>';
+		            v2+='		</li>';
+		            v2+='		<li>';
+		            v2+='			<a href="#"  onclick="window.plugins.socialsharing.share(\''+result.product_desc+'\', \''+result.product_name+'\', \''+server+result.main_image_url+'\', null); return false;">';
+		            v2+='				<img src="./img/btn/image_sharing.png" />';
+		            v2+='			</a>';
+		            v2+='		</li>';
+		            v2+='	</ul>';
+		            v2+='</div>';
+		        $("#detail-box").html(v2);
+    			
+    			//로딩바 감추기
+    			loadingHide();
+    		},
+    		error:function(request, status, error){
+    			loadingHide();
+    			if(request.status==0){
+    				if(confirm('Internet is not connected.\nDo you want to check\nyour connection and try again?')){
+    					location.reload();
+    				}else{
+    					navigator.app.exitApp();
+    				}
+    			}
+    		}
+    	});
+        
+        function doSubmit(menuId){
+        	loadingShow();
+        	var getParam = getParameter('menuId');
+        	window.location.href='./products_list.html?menuId='+getParam + '&menu='+menuId;
+        }
+    </script>
+  </body>
+</html>
