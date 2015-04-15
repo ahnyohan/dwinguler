@@ -96,7 +96,7 @@
         			$("#list").html('');
         			for(var i=0; i<result.length; i++){
         				var v= '	<center style="margin:30px 0 -10px 0; font-size:12px;"><b>'+result[i].product_name+'<b/></center>';
-        				v+= '<li onclick="window.location.href=\'./products_detail.html?no='+result[i].no+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'" style="background-image: url(\''+server+result[i].thumbnail_url+'\');">'
+        				v+= '<li onclick="window.location.href=\'./products_detail.html?no='+result[i].no+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'" style="background-image: url(\''+server+result[i].thumbnail_url+'\'); background-size: 100% 100%;">'
 //                     	v+=	'	<p>'+result[i].product_name+'</p>';
                     	v+=	'</li>';
                     	
@@ -166,7 +166,7 @@
     			$("#list").html('');
     			for(var i=0; i<result.length; i++){
     				var v= '	<center style="margin:30px 0 -10px 0; font-size:12px;"><b>'+result[i].product_name+'<b/></center>';
-    				v+= '<li onclick="window.location.href=\'./products_detail.html?no='+result[i].no+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'" style="background-image: url(\''+server+result[i].thumbnail_url+'\');">'
+    				v+= '<li onclick="window.location.href=\'./products_detail.html?no='+result[i].no+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'" style="background-image: url(\''+server+result[i].thumbnail_url+'\'); background-size: 100% 100%;">'
 //                 	v+=	'	<p>'+result[i].product_name+'</p>';
                 	v+=	'</li>';
                 	
