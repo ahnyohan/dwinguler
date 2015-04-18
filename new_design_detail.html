@@ -87,12 +87,13 @@
 		            v2+='			</a>';
 		            v2+='		</li>';
 		            v2+='		<li>';
-		            v2+='			<a href="#"  onclick="window.plugins.socialsharing.share(\''+result.product_desc+'\', \''+result.product_name+'\', \''+server+result.main_image_url+'\', null); return false;">';
+		            v2+='			<a href="#"  onclick="window.plugins.socialsharing.share(\''+result.product_desc.replace(/\r\n/g, '')+'\', \''+result.product_name+'\', \''+server+result.main_image_url+'\', null); return false;">';
 		            v2+='				<img src="./img/btn/image_sharing.png" />';
 		            v2+='			</a>';
 		            v2+='		</li>';
 		            v2+='	</ul>';
 		            v2+='</div>';
+					
 		        $("#detail-box").html(v2);
     			
     			//로딩바 감추기

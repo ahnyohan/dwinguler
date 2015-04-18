@@ -88,6 +88,10 @@
                 		v+='</li>';
                 	$("#list").append(v);
     			}
+				
+				if(result.length == 0){
+					$("#list").html('<div class="nolist"> The data will be updated soon. </div>');
+				}
     			//로딩바 감추기
     			loadingHide();
     		},

@@ -80,6 +80,46 @@ html, body {
     text-align: center;
 }
 
+.top-menu ul li#tab1 {
+    float:left;
+    position: relative;
+    margin: 0;
+    padding:0;
+    width: 50%;
+    text-align: center;
+}
+
+.top-menu ul li#tab2 {
+    float:right;
+    position: relative;
+    margin: 0;
+    padding:0;
+    width: 50%;
+    text-align: center;
+}
+
+.top-menu ul li#tab1.double {
+    background-image: url('../img/menu/stardard_menu.png');
+    background-size: 100% 100%; 
+}
+
+.top-menu ul li#tab1.double.activated {
+    background-image: url('../img/menu/stardard_menu_1.png');
+    background-size: 100% 100%; 
+}
+
+.top-menu ul li#tab2.double {
+    background-image: url('../img/menu/user_video_menu.png');
+    background-size: 100% 100%; 
+}
+
+.top-menu ul li#tab2.double.activated {
+    background-image: url('../img/menu/user_video_menu_1.png');
+    background-size: 100% 100%; 
+}
+
+
+
 .top-menu ul li img {
     height: 57px;
     vertical-align: top;
@@ -96,6 +136,7 @@ html, body {
     left: 50%;
     margin-left: -35px;
     display: none;
+	width:100%;
 }
 
 .top-menu ul li.double img.menu-activated-icon {
@@ -113,7 +154,7 @@ html, body {
     display: block;
     width: 100%;
     height: 57px;
-    background-image: url('../img/bg/top_btn1_bg.png');
+/*     background-image: url('../img/bg/top_btn1_bg.png'); */
     -webkit-background-size: contain;
     -moz-background-size: contain;
     -o-background-size: contain;
@@ -261,7 +302,7 @@ and (max-width : 400px) {
 }
 
 #content-wrapper.L-B-D {
-    margin-bottom: 140px;
+    margin-bottom: 80px;
 }
 
 .BG1 {
@@ -285,7 +326,7 @@ and (max-width : 400px) {
 #content-wrapper .img-cover .subContent {
 /* 	line-height: 1.5em; */
 /*     height: 3em; */
-	margin-bottom: 140px;	
+	margin-bottom: 80px;	
 }
 
 #products-menu-sensory {
@@ -396,7 +437,7 @@ and (max-width : 399px) {
 }
 
 .eco-list li .info h2{
-    color: #777777;
+/*     color: #777777; */
     margin: 0;
     padding: 0;
     line-height: 1em;
@@ -472,7 +513,7 @@ and (max-width : 399px) {
 }
 
 .video-list li h2{
-    color: #777777;
+/*     color: #777777; */
     margin: 0.2em 0;
     padding: 0.2em;
     line-height: 1.5em;
@@ -839,7 +880,7 @@ and (max-width : 400px) {
     left: 0;
     right: 0;
     bottom: 0;
-    height: 140px;
+    height: 80px;
     margin: 0;
     background: #eeefef;
     position: fixed;
@@ -874,6 +915,7 @@ and (max-width : 400px) {
     line-height: 1.5em;
     height: 3em;
     font-size: 1.5em;
+    display:none;
 }
 
 /** Sample **/
