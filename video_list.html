@@ -30,7 +30,7 @@
                     </a>
                 </div>
                 <div id="share-btn">
-                    <a href="#" onclick="window.plugins.socialsharing.share('dwinguler 앱을 추천합니다.', null, null, 'goo.gl/vHrce9'); return false;">
+                    <a href="#" onclick="window.plugins.socialsharing.share('dwinguler 앱을 추천합니다.', null, null, 'http://goo.gl/vHrce9'); return false;">
                         <img src="./img/btn/main_sharing.png" />
                     </a>
                 </div>
@@ -38,14 +38,14 @@
                     <ul class="list-inline">
                         <li id="tab1">
                             <a href="javascript:doSubmit('100');">
-<!--                                 <img src="./img/menu/stardard_menu.png" /> -->
-<!--                                 <img src="./img/menu/stardard_menu_1.png" class="menu-activated-icon" /> -->
+                               <img src="./img/menu/stardard_menu.png" /> 
+                               <!--<img src="./img/menu/stardard_menu_1.png" class="menu-activated-icon" /> -->
                             </a>
                         </li>
                         <li id="tab2">
                             <a href="javascript:doSubmit('200');">
-<!--                                 <img src="./img/menu/user_video_menu.png" /> -->
-<!--                                 <img src="./img/menu/user_video_menu_1.png" class="menu-activated-icon" > -->
+                                <img src="./img/menu/user_video_menu.png" /> 
+                                <!--<img src="./img/menu/user_video_menu_1.png" class="menu-activated-icon" > -->
                             </a>
                         </li>
                     </ul>
@@ -119,6 +119,12 @@
                   if(menu == '100'){
                       $('#tab1').attr('class','double activated');
                       $('#tab2').attr('class','double');
+                      $('#tab1 > a > img').attr('src', './img/menu/stardard_menu_1.png');
+                      $('#tab2 > a > img').attr('src', './img/menu/user_video_menu.png');
+
+                      if($('#tab1 > a').css('width') < $('#tab1 > a > img').css('width')){
+                        $('#tab1 > a > img').css('width', '100%');
+                      }
                       
                       $("#list").html('');
                       if(getParameter('menuId') == '21000'){
@@ -182,6 +188,12 @@
                   }else if(menu == '200'){
                       $('#tab1').attr('class','double');
                       $('#tab2').attr('class','double activated');
+                      $('#tab1 > a > img').attr('src', './img/menu/stardard_menu.png');
+                      $('#tab2 > a > img').attr('src', './img/menu/user_video_menu_1.png');
+
+                       if($('#tab2 > a').css('width') < $('#tab2 > a > img').css('width')){
+                        $('#tab2 > a > img').css('width', '100%');
+                      }
                       
                       var menuId = Number($("#menuId").val()) + Number(menu);
                       var param = 'cate='+ menuId;
@@ -236,6 +248,13 @@
         if(menu == '100'){
             $('#tab1').attr('class','double activated');
             $('#tab2').attr('class','double');
+            $('#tab1 > a > img').attr('src', './img/menu/stardard_menu_1.png');
+            
+            if($('#tab1 > a').css('width') < $('#tab1 > a > img').css('width')){
+              $('#tab1 > a > img').css('width', '100%');
+            }
+
+            
             if(getParameter('menuId') == '21000'){
                 $("#list").html('');
                 var v = '';
@@ -353,6 +372,11 @@
         }else if(menu == '200'){
             $('#tab1').attr('class','double');
             $('#tab2').attr('class','double activated');
+            $('#tab2 > a > img').attr('src', './img/menu/user_video_menu_1.png');
+
+            if($('#tab2 > a').css('width') < $('#tab2 > a > img').css('width')){
+              $('#tab2 > a > img').css('width', '100%');
+            }
             
             var menuId = Number($("#menuId").val()) + Number(menu);
             var param = 'cate='+menuId;
