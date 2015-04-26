@@ -149,11 +149,19 @@ function imgDownloadAndroid(url) {
 }
 
 function imgDownloadIOS(url){
-    var myCallbackMethod = function(returnVal) {
+    /*var myCallbackMethod = function(returnVal) {
         console.log(returnVal);
     };
 
-    window.plugins.saveImage.saveImageFromURL(url, 'myCallbackMethod');
+    window.plugins.saveImage.saveImageFromURL(url, 'myCallbackMethod');*/
+    //document.addEventListener("deviceready",onDeviceReady);
+    cordova.plugins.imgDownloader.downloadWithUrl(url,function(){
+            alert("success");
+        },function(){
+            alert("error");
+        });    
+    
+
 }
 
 //파라미터 받아오기
