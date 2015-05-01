@@ -444,7 +444,8 @@ and (max-width : 399px) {
     margin: 0;
     padding: 0;
     line-height: 1em;
-    font-size: 1.8em;
+    font-size: 1.4em;
+    color:rgb(89, 87, 87);
     font-weight: normal;
 }
 
