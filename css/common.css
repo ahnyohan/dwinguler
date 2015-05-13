@@ -1,6 +1,6 @@
 /** default **/
 html, body {
-    background: url('../img/bg/BG2.png');
+    /*background: url('../img/bg/BG2.png');*/
 }
 
 #wrapper {
@@ -309,11 +309,11 @@ and (max-width : 400px) {
 }
 
 .BG1 {
-    background: url('../img/bg/BG.png');
+    /*background: url('../img/bg/BG.png');*/
 }
 
 .BG2 {
-    background: url('../img/bg/BG2.png');
+    /*background: url('../img/bg/BG2.png');*/
 }
 
 #content-wrapper .img-cover {

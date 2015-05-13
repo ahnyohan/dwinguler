@@ -1,0 +1,289 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"li",
+				"li	Tag"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"onmouse",
+				"onmouseout	Attr"
+			],
+			[
+				"onmou",
+				"onmouseover	Attr"
+			],
+			[
+				"onm",
+				"onmouseover	Attr"
+			],
+			[
+				"r",
+				"rgba"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"in",
+				"inline"
+			],
+			[
+				"he",
+				"header	Tag"
+			],
+			[
+				"ret",
+				"returnVal"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"ht",
+				"http-equiv	Attr"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 167.0,
+		"last_filter": "html",
+		"selected_items":
+		[
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Snippet: ",
+				"Snippet: comment"
+			],
+			[
+				"snipe",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"",
+				"Set Syntax: HTML"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ahn-yohan/Documents/yohanTest/ResponsiveLayout/responsiveLayout.html",
+		"/Users/ahn-yohan/Documents/yohanTest/ResponsiveLayout/responsiveLayout.css",
+		"/Users/ahn-yohan/Documents/yohanTest/scrollPaging/ScrollPaging.html",
+		"/Users/ahn-yohan/Dwinguler/www/products_list.html",
+		"/Users/ahn-yohan/Dwinguler/www/css/common.css",
+		"/Users/ahn-yohan/Dwinguler/www/video_list.html",
+		"/Users/ahn-yohan/Dwinguler/www/mail.html",
+		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/headerNavFix.css",
+		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/headerNavFix.js",
+		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/headerNavFix.html",
+		"/Users/ahn-yohan/Documents/yohanTest/scrollPaging/ScrollPaging.js",
+		"/Users/ahn-yohan/Documents/yohanTest/scrollPaging/ScrollPaging.css",
+		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/js/jssor.slider.mini.js",
+		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/js/jssor.js",
+		"/Users/ahn-yohan/Downloads/Jssor.Slider.FullPack/demos-jquery/banner-slider.source.html",
+		"/Users/ahn-yohan/Dwinguler/www/js/app.js",
+		"/Users/ahn-yohan/Dwinguler/platforms/ios/www/js/app.js",
+		"/Users/ahn-yohan/Library/Application Support/Sublime Text 3/Packages/User/JavaScript.sublime-settings",
+		"/Users/ahn-yohan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"success",
+			"awrap",
+			"A37A66",
+			";\n",
+			"1.4",
+			"12px",
+			"menu-activated-icon",
+			"tab",
+			".top-menu ul li.activated img.menu-activated-icon, .top-menu ul li a:hover img.menu-activated-icon",
+			".top-menu ul li img.menu-activated-icon",
+			"top-menu ul li.double img.menu-activated-icon",
+			".top-menu ul li img",
+			"top-menu ul li.activated ",
+			"tab",
+			"    \n",
+			"스크롤 페이징",
+			"타이틀"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "Dwinguler.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"scrp",
+				"~/Documents/scrollPaging/ScrollPaging.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Dwinguler/www/Dwinguler.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 87.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 199.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

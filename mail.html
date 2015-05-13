@@ -77,14 +77,14 @@
     <script>
         
         function goMail(){
-        	if($("#subject").val() ==''){
-        		alert('제목을 입력해주세요');
+        	if($("#subject").val() ==''){        		
+                window.plugins.toast.show('please enter a title', 'short', 'bottom', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
         		return;
         	}
-        	if($("#content").val() == ''){
-        		alert('본문을 입력해주세요');
-        		return;
-        	}
+        	// if($("#content").val() == ''){
+        	// 	alert('본문을 입력해주세요');
+        	// 	return;
+        	// }
         	window.plugin.email.open({
         	    to:      ['dwingulershop@ianes.com'],
         	    subject: $("#subject").val(),

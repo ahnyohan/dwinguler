@@ -127,7 +127,7 @@ downloadApp.prototype = {
 
 function imgDownload(url){
     //window.open(url, '_blank', 'location=yes');
-    window.plugins.toast.show('저장 중입니다...', 'short', 'bottom', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
+    window.plugins.toast.show('Image Saving...', 'short', 'bottom', function(a){console.log('toast success: ' + a)}, function(b){alert('toast error: ' + b)});
 
     if(device.platform=="iOS"){
         return imgDownloadIOS(url);
@@ -156,7 +156,7 @@ function imgDownloadIOS(url){
     window.plugins.saveImage.saveImageFromURL(url, 'myCallbackMethod');*/
     //document.addEventListener("deviceready",onDeviceReady);
     cordova.plugins.imgDownloader.downloadWithUrl(url,function(){
-            alert("success");
+            
         },function(){
             alert("error");
         });    
