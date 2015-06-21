@@ -117,12 +117,22 @@
 	"file_history":
 	[
 		"/Users/ahn-yohan/Documents/yohanTest/ResponsiveLayout/responsiveLayout.html",
+		"/Users/ahn-yohan/Documents/yohanTest/ResponsiveLayout/index.html",
 		"/Users/ahn-yohan/Documents/yohanTest/ResponsiveLayout/responsiveLayout.css",
-		"/Users/ahn-yohan/Documents/yohanTest/scrollPaging/ScrollPaging.html",
-		"/Users/ahn-yohan/Dwinguler/www/products_list.html",
-		"/Users/ahn-yohan/Dwinguler/www/css/common.css",
-		"/Users/ahn-yohan/Dwinguler/www/video_list.html",
+		"/Users/ahn-yohan/Documents/yohanTest/ResponsiveLayout/test.html",
+		"/Users/ahn-yohan/Dwinguler/platforms/ios 2/www/css/common.css",
 		"/Users/ahn-yohan/Dwinguler/www/mail.html",
+		"/Users/ahn-yohan/Dwinguler/www/js/app.js",
+		"/Users/ahn-yohan/Downloads/sofa.png",
+		"/Users/ahn-yohan/Dwinguler/www/css/common.css",
+		"/Users/ahn-yohan/Dwinguler/www/products_list.html",
+		"/Users/ahn-yohan/Dwinguler/www/video_list.html",
+		"/Users/ahn-yohan/Dwinguler/www/video_view.html",
+		"/Users/ahn-yohan/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/ahn-yohan/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/ahn-yohan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/ahn-yohan/Dwinguler/www/css/bootstrap-theme.css",
+		"/Users/ahn-yohan/Documents/yohanTest/scrollPaging/ScrollPaging.html",
 		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/headerNavFix.css",
 		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/headerNavFix.js",
 		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/headerNavFix.html",
@@ -131,10 +141,8 @@
 		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/js/jssor.slider.mini.js",
 		"/Users/ahn-yohan/Documents/yohanTest/Header Nav Fix/js/jssor.js",
 		"/Users/ahn-yohan/Downloads/Jssor.Slider.FullPack/demos-jquery/banner-slider.source.html",
-		"/Users/ahn-yohan/Dwinguler/www/js/app.js",
 		"/Users/ahn-yohan/Dwinguler/platforms/ios/www/js/app.js",
-		"/Users/ahn-yohan/Library/Application Support/Sublime Text 3/Packages/User/JavaScript.sublime-settings",
-		"/Users/ahn-yohan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+		"/Users/ahn-yohan/Library/Application Support/Sublime Text 3/Packages/User/JavaScript.sublime-settings"
 	],
 	"find":
 	{
@@ -145,6 +153,7 @@
 		"height": 93.0,
 		"where_history":
 		[
+			"/Users/ahn-yohan/Dwinguler/www",
 			""
 		]
 	},
@@ -153,6 +162,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"contents",
+			"index",
+			"BG",
+			"goo.",
 			"success",
 			"awrap",
 			"A37A66",
@@ -198,7 +211,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 31.0
 	},
 	"layout":
 	{
@@ -231,6 +244,10 @@
 	{
 		"height": 0.0
 	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
 	"pinned_build_system": "",
 	"project": "Dwinguler.sublime-project",
 	"replace":
@@ -244,6 +261,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"mai",
+				"mail.html"
+			],
 			[
 				"scrp",
 				"~/Documents/scrollPaging/ScrollPaging.html"

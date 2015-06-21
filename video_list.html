@@ -128,15 +128,18 @@
                       
                       $("#list").html('');
                       if(getParameter('menuId') == '21000'){
+                          $("#list").html('');
                           var v = '';
                           var url =  '';
                           
                           url = encodeURIComponent('video/130429_Sound_Mat.mp4');
                           
-                          //         			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/130429_Sound_Mat.mp4\');">';
+                          //          v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/130429_Sound_Mat.mp4\');">';
                           v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                           v+= '<div class="info">';
-                          v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Sound_Play_Mat.jpg\');">';
+                          //v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Sound_Play_Mat.jpg\');">';
+                          v+= '<div class="img-video">';
+                          v+= '<img src="./img/sample/Dwinguler_Sound_Play_Mat.jpg" class="img-video">';
                           v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                           v+= '</div>';
                           v+= '<h2>1.Dwinguler Sound Play Mat</h2>';
@@ -145,10 +148,12 @@
                           
                           url = encodeURIComponent('video/aaa1234.mp4');
                           
-                          //         			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/aaa1234.mp4\');">';
+                          //          v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/aaa1234.mp4\');">';
                           v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                           v+= '<div class="info">';
-                          v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Aesops_Fables_AR.jpg\');">';
+                          //v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Aesops_Fables_AR.jpg\');">';
+                          v+= '<div class="img-video">';
+                          v+= '<img src="./img/sample/Dwinguler_Aesops_Fables_AR.jpg" class="img-video">';
                           v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                           v+= '</div>';
                           v+= '<h2>2.Dwinguler Aesop\'s Fables AR </h2>';
@@ -157,10 +162,12 @@
                           
                           url = encodeURIComponent('video/Dwinguelr_Amazing_Origami.mp4');
                           
-                          //         			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/Dwinguelr_Amazing_Origami.mp4\');">';
+                          //          v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/Dwinguelr_Amazing_Origami.mp4\');">';
                           v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                           v+= '<div class="info">';
-                          v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Amazing_Origami_Mat.jpg\');">';
+                          //v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Amazing_Origami_Mat.jpg\');">';
+                          v+= '<div class="img-video">';
+                          v+= '<img src="./img/sample/Dwinguler_Amazing_Origami_Mat.jpg" class="img-video">';
                           v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                           v+= '</div>';
                           v+= '<h2>3.Dwinguelr Amazing Origami</h2>';
@@ -169,17 +176,17 @@
                           
                           url = encodeURIComponent('video/I&S_Standard_final.mp4');
                           
-                          //         			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/I&S_Standard_final.mp4\');">';
+                          //          v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/I&S_Standard_final.mp4\');">';
                           v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                           v+= '<div class="info">';
-                          v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Play_Mat.jpg\');">';
+                          //v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Play_Mat.jpg\');">';
+                          v+= '<div class="img-video">';
+                          v+= '<img src="./img/sample/Dwinguler_Play_Mat.jpg" class="img-video">';
                           v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                           v+= '</div>';
                           v+= '<h2>4.Dwinguler Play Mat</h2>';
                           v+= '</div>';
                           v+= '</li>';
-                          
-                          
                           
                           $("#list").append(v);
                       }
@@ -207,7 +214,9 @@
                              for(var i=0; i<result.length; i++){
                              var v = '<li onclick="window.location.href=\'./video_view.html?url='+encodeURIComponent(result[i].video_url)+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                             	v+= '<div class="info">';
-                            	v+= '<div class="img-video" style="background-image: url(\''+server+result[i].thumbnail_url+'\');">';
+                            	//v+= '<div class="img-video" style="background-image: url(\''+server+result[i].thumbnail_url+'\');">';
+                              v+= '<div class="img-video">';
+                            v+= '<img src="'+server+result[i].thumbnail_url+'" class="img-video">';
                              v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                             	v+= '</div>';
                             	v+= '<h2>'+result[i].product_name+'</h2>';
@@ -256,6 +265,7 @@
 
             
             if(getParameter('menuId') == '21000'){
+                
                 $("#list").html('');
                 var v = '';
                 var url =  '';
@@ -265,7 +275,9 @@
                 //     			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/130429_Sound_Mat.mp4\');">';
                 v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                 v+= '<div class="info">';
-                v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Sound_Play_Mat.jpg\');">';
+                //v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Sound_Play_Mat.jpg\');">';
+                v+= '<div class="img-video">';
+                v+= '<img src="./img/sample/Dwinguler_Sound_Play_Mat.jpg" class="img-video">';
                 v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                 v+= '</div>';
                 v+= '<h2>1.Dwinguler Sound Play Mat</h2>';
@@ -277,7 +289,9 @@
                 //     			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/aaa1234.mp4\');">';
                 v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                 v+= '<div class="info">';
-                v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Aesops_Fables_AR.jpg\');">';
+                //v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Aesops_Fables_AR.jpg\');">';
+                v+= '<div class="img-video">';
+                v+= '<img src="./img/sample/Dwinguler_Aesops_Fables_AR.jpg" class="img-video">';
                 v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                 v+= '</div>';
                 v+= '<h2>2.Dwinguler Aesop\'s Fables AR </h2>';
@@ -289,7 +303,9 @@
                 //     			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/Dwinguelr_Amazing_Origami.mp4\');">';
                 v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                 v+= '<div class="info">';
-                v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Amazing_Origami_Mat.jpg\');">';
+                //v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Amazing_Origami_Mat.jpg\');">';
+                v+= '<div class="img-video">';
+                v+= '<img src="./img/sample/Dwinguler_Amazing_Origami_Mat.jpg" class="img-video">';
                 v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                 v+= '</div>';
                 v+= '<h2>3.Dwinguelr Amazing Origami</h2>';
@@ -301,59 +317,9 @@
                 //     			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/I&S_Standard_final.mp4\');">';
                 v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                 v+= '<div class="info">';
-                v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Play_Mat.jpg\');">';
-                v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
-                v+= '</div>';
-                v+= '<h2>4.Dwinguler Play Mat</h2>';
-                v+= '</div>';
-                v+= '</li>';
-                
-                $("#list").append(v);$("#list").html('');
-                var v = '';
-                var url =  '';
-                
-                url = encodeURIComponent('video/130429_Sound_Mat.mp4');
-                
-                //     			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/130429_Sound_Mat.mp4\');">';
-                v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
-                v+= '<div class="info">';
-                v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Sound_Play_Mat.jpg\');">';
-                v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
-                v+= '</div>';
-                v+= '<h2>1.Dwinguler Sound Play Mat</h2>';
-                v+= '</div>';
-                v+= '</li>';
-                
-                url = encodeURIComponent('video/aaa1234.mp4');
-                
-                //     			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/aaa1234.mp4\');">';
-                v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
-                v+= '<div class="info">';
-                v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Aesops_Fables_AR.jpg\');">';
-                v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
-                v+= '</div>';
-                v+= '<h2>2.Dwinguler Aesop\'s Fables AR </h2>';
-                v+= '</div>';
-                v+= '</li>';
-                
-                url = encodeURIComponent('video/Dwinguelr_Amazing_Origami.mp4');
-                
-                //     			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/Dwinguelr_Amazing_Origami.mp4\');">';
-                v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
-                v+= '<div class="info">';
-                v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Amazing_Origami_Mat.jpg\');">';
-                v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
-                v+= '</div>';
-                v+= '<h2>3.Dwinguelr Amazing Origami</h2>';
-                v+= '</div>';
-                v+= '</li>';
-                
-                url = encodeURIComponent('video/I&S_Standard_final.mp4');
-                
-                //     			v+= '<li onclick="javascript:videoPlay(\'file:///android_asset/www/video/I&S_Standard_final.mp4\');">';
-                v+= '<li onclick="window.location.href=\'./video_view.html?url='+url+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
-                v+= '<div class="info">';
-                v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Play_Mat.jpg\');">';
+                //v+= '<div class="img-video" style="background-image: url(\'./img/sample/Dwinguler_Play_Mat.jpg\');">';
+                v+= '<div class="img-video">';
+                v+= '<img src="./img/sample/Dwinguler_Play_Mat.jpg" class="img-video">';
                 v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                 v+= '</div>';
                 v+= '<h2>4.Dwinguler Play Mat</h2>';
@@ -391,7 +357,9 @@
                    for(var i=0; i<result.length; i++){
                    var v = '<li onclick="window.location.href=\'./video_view.html?url='+encodeURIComponent(result[i].video_url)+'&menuId='+$("#menuId").val()+'&menu='+menu+'\'">';
                    v+= '<div class="info">';
-                   v+= '<div class="img-video" style="background-image: url(\''+server+result[i].thumbnail_url+'\');">';
+                   //v+= '<div class="img-video" style="background-image: url(\''+server+result[i].thumbnail_url+'\');">';
+                   v+= '<div class="img-video">';
+                   v+= '<img src="'+server+result[i].thumbnail_url+'" class="img-video">';
                    v+= '<img src="./img/icon/gallery_play_icon.png" class="play-icon">';
                    v+= '</div>';
                    v+= '<h2>'+result[i].product_name+'</h2>';
